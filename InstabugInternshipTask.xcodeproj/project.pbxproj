@@ -10,6 +10,8 @@
 		2B08C824265E83FE000F2415 /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08C820265E8349000F2415 /* LoggerModel.swift */; };
 		2B86F99D265EE01C0021AE00 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F99C265EE01C0021AE00 /* CoreDataManager.swift */; };
 		2B86F9A4265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */; };
+		2B8A389C265FD9AC00FB25B5 /* InstabugLoggerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */; };
+		2B8A38A1265FD9BD00FB25B5 /* InstabugLoggerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */; };
 		2BCBEFBB265F1A0C007F6FDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBEFBA265F1A0C007F6FDE /* Constants.swift */; };
 		2BCBEFC1265F1C55007F6FDE /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBEFC0265F1C55007F6FDE /* LogLevel.swift */; };
 		B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E98262D7C10007D38E8 /* AppDelegate.swift */; };
@@ -166,13 +168,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2B983DEC265E6E1A00D1E661 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		2BCBEFB9265F19EE007F6FDE /* Utilis */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +202,6 @@
 			children = (
 				2B983DE7265E6DBB00D1E661 /* Delegates */,
 				2B983DEA265E6DF900D1E661 /* Assets */,
-				2B983DEC265E6E1A00D1E661 /* Presenter */,
 				2B983DE8265E6DCA00D1E661 /* Views */,
 				B47E3EA6262D7C11007D38E8 /* Info.plist */,
 			);
@@ -383,6 +377,7 @@
 				B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */,
 				B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */,
 				B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */,
+				2B8A389C265FD9AC00FB25B5 /* InstabugLoggerCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47E3EE2262D7C66007D38E8 /* InstabugLoggerTests.swift in Sources */,
+				2B8A38A1265FD9BD00FB25B5 /* InstabugLoggerCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

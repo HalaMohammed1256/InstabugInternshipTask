@@ -13,5 +13,6 @@ struct Constants {
     static let message = "message"
     static let level = "level"
     static let timestamp = "timestamp"
+    static let loggerEntity = "Logger"
     
 }

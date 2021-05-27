@@ -11,6 +11,7 @@ import UIKit
 public class InstabugLogger {
     
     public static var shared = InstabugLogger()
+    var loggerArray = [Logger]()
     
 
     // MARK: Logging
@@ -20,14 +21,17 @@ public class InstabugLogger {
         let timestramp = getLogTimestramp()
         
         
+        loggerArray = fetchAllLogs()
         
-        print("your project send a\\an \(level) with message \(logMessage) and that log has occurred at \(timestramp)")
+//        print("your project send a\\an \(level) with message \(logMessage) and that log has occurred at \(timestramp)")
         
         
         let loggerModel = LoggerModel(message: logMessage, level: .error, timeStamp: timestramp)
         
         // save log to core data
-        CoreDataManager.instance.saveToCoreData(entityName: "Logger", loggerData: loggerModel)
+        CoreDataManager.instance.saveToCoreData(entityName: Constants.loggerEntity, loggerData: loggerModel)
+        
+        
 
     }
 
@@ -36,8 +40,13 @@ public class InstabugLogger {
     
     // MARK: Fetch logs
     #warning("Replace Any with an appropriate type")
-    public func fetchAllLogs() -> Any {
-        fatalError("Not implemented")
+    public func fetchAllLogs() -> [Logger] {
+        //fatalError("Not implemented")
+        
+        let loggers = CoreDataManager.instance.fetchFromCoreData(entityName: Constants.loggerEntity)
+        
+        return loggers
+        
     }
     
     #warning("Replace Any with an appropriate type")
@@ -48,6 +57,7 @@ public class InstabugLogger {
     
     public func clearLogs(){
         // remove all from core data
+        CoreDataManager.instance.deleteCoreData(entityName: Constants.loggerEntity)
     }
     
     
