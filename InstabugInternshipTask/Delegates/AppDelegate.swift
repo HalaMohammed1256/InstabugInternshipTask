@@ -18,58 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        InstabugLogger.shared.log(level: .error, message: "jWv7k6URq4T4KdQlDshhVN125hRGU9d7i93FSZacTKh0ejmbCSkDqxS5ND085IVlxMcyX11fq7cjq8jNlNopE6dCUw84qA6uxyqcjfZUjFIWhhTvmewtHaUsNIqAsvaiq9dt0VXuGjTFxBjPJpSJLeXvCazz16JeK0n2vYkXhphF2O1WCsoXEIshxXH5Q51YwrrrFWWX0LnBq9gTFeE1zNHb1fSgIgU2Id1HZFuJZMSfzBPHi0nBjyrEeZqI9nnBadmOgFBY4fERJk5SlYgac1TIwzOSGvElmvLNrTSSsNMkBDHl9TNKXilk4JI62KNAhiLb8Pslxjk4LHtlaXPU1by6GXoj6lTsxFhJ6Tlbx3q39KpioYczHdqAtxT6J1xpe9pmbDusEYVrq7CpFPszadZ8cT0YnaoRJlb8vsDgpz735zOIxVg8BlBcP8sWrAozK2b1yof0tZJDnaZzIoQN94ZvSjSRirTBXrxRX35xpvkIG9OAhJC8Me3dwykuCHmM2TqN4WX5PLeaM56o2eZAxhAD3gZFkkg4Sh7JZt7FWv8Q54N0MwSAftCetFEVpSvaUbGuYbxbCdaCfF1SnBhO9mqd936IYe42mHvttJjU8ivqsRRMVfdhaxmU4dAOqmNbcdnOCWynt65U1wwEeYCcjztbwgVwjqui7uwi4HTrUcXJ4egILLRQF6UzOk2GAY9GdgGYTBjR9NKz3krtVPBZWxf6Rf9ILMAgc3ElacmmzEaZC2tRJ6m0aam54maaxzs3xtK6QU7RLtvzIqYj9GFrgKNNEpzgZ4m6HrLHaaGYgGdg3zlpCl0SVY7IXiocvJA5mTCs8V5LigQ0mrMF2br7uxggMsBVp9WzyZgmoLfVdFlLflWn9t9ikGgIfLbtnKF6s3LyD9hQ59NUYHMWfO6mLeQXXeS2FcAQEWw8DyqsRkiDcv1fKtCx1IXK9CRe1FJxe1kpKTcMFuihUYmcTJYSCR68r9XezSQieusfe123Hala")
         
         return true
         
         
     }
     
-    
-    // MARK: - Core Data stack
-
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
-        let container = NSPersistentContainer(name: "InstabugInternshipTask")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-
     
     
 

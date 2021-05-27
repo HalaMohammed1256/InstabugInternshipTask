@@ -9,18 +9,10 @@ import Foundation
 
 
 struct LoggerModel {
-        
-    enum LoggerLevel: String {
-        case trace = "trace"
-        case debug = "debug"
-        case info = "info"
-        case notice = "notice"
-        case error = "error"
-    }
     
     var message: String
     var level: LoggerLevel
-    var timeStamp: Date
+    var timeStamp: String
     
 }
 

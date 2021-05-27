@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2B08C824265E83FE000F2415 /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08C820265E8349000F2415 /* LoggerModel.swift */; };
-		2BA45B15265E7C7E00A342E1 /* GenericCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA45B14265E7C7E00A342E1 /* GenericCoreData.swift */; };
-		2BA45B19265E7D4200A342E1 /* SuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA45B18265E7D4200A342E1 /* SuperView.swift */; };
-		2BA45B20265E7E8500A342E1 /* InstabugTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BA45B1E265E7E8500A342E1 /* InstabugTask.xcdatamodeld */; };
+		2B86F99D265EE01C0021AE00 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F99C265EE01C0021AE00 /* CoreDataManager.swift */; };
+		2B86F9A4265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */; };
+		2BCBEFBB265F1A0C007F6FDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBEFBA265F1A0C007F6FDE /* Constants.swift */; };
+		2BCBEFC1265F1C55007F6FDE /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBEFC0265F1C55007F6FDE /* LogLevel.swift */; };
 		B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E98262D7C10007D38E8 /* AppDelegate.swift */; };
 		B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */; };
 		B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9C262D7C10007D38E8 /* ViewController.swift */; };
@@ -65,9 +66,10 @@
 
 /* Begin PBXFileReference section */
 		2B08C820265E8349000F2415 /* LoggerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerModel.swift; sourceTree = "<group>"; };
-		2BA45B14265E7C7E00A342E1 /* GenericCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericCoreData.swift; sourceTree = "<group>"; };
-		2BA45B18265E7D4200A342E1 /* SuperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperView.swift; sourceTree = "<group>"; };
-		2BA45B1F265E7E8500A342E1 /* InstabugTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstabugTask.xcdatamodel; sourceTree = "<group>"; };
+		2B86F99C265EE01C0021AE00 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2B86F9A3265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstabugLoggerCoreData.xcdatamodel; sourceTree = "<group>"; };
+		2BCBEFBA265F1A0C007F6FDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2BCBEFC0265F1C55007F6FDE /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstabugInternshipTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3E98262D7C10007D38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B86F99B265EE00B0021AE00 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				2B86F99C265EE01C0021AE00 /* CoreDataManager.swift */,
+				2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		2B983DE7265E6DBB00D1E661 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,21 +173,13 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		2BA45B07265E768700A342E1 /* Utilis */ = {
+		2BCBEFB9265F19EE007F6FDE /* Utilis */ = {
 			isa = PBXGroup;
 			children = (
-				2BA45B14265E7C7E00A342E1 /* GenericCoreData.swift */,
-				2BA45B18265E7D4200A342E1 /* SuperView.swift */,
+				2BCBEFBA265F1A0C007F6FDE /* Constants.swift */,
+				2BCBEFC0265F1C55007F6FDE /* LogLevel.swift */,
 			);
 			path = Utilis;
-			sourceTree = "<group>";
-		};
-		2BA45B0C265E78AA00A342E1 /* Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				2BA45B1E265E7E8500A342E1 /* InstabugTask.xcdatamodeld */,
-			);
-			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		B47E3E8C262D7C10007D38E8 = {
@@ -204,9 +207,6 @@
 			children = (
 				2B983DE7265E6DBB00D1E661 /* Delegates */,
 				2B983DEA265E6DF900D1E661 /* Assets */,
-				2BA45B07265E768700A342E1 /* Utilis */,
-				2BA45B0C265E78AA00A342E1 /* Data Model */,
-				2B983DEB265E6E1100D1E661 /* Model */,
 				2B983DEC265E6E1A00D1E661 /* Presenter */,
 				2B983DE8265E6DCA00D1E661 /* Views */,
 				B47E3EA6262D7C11007D38E8 /* Info.plist */,
@@ -217,6 +217,9 @@
 		B47E3ED3262D7C66007D38E8 /* InstabugLogger */ = {
 			isa = PBXGroup;
 			children = (
+				2BCBEFB9265F19EE007F6FDE /* Utilis */,
+				2B86F99B265EE00B0021AE00 /* Core Data */,
+				2B983DEB265E6E1100D1E661 /* Model */,
 				B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */,
 				B47E3ED5262D7C66007D38E8 /* Info.plist */,
 				B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */,
@@ -377,11 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA45B15265E7C7E00A342E1 /* GenericCoreData.swift in Sources */,
-				2BA45B19265E7D4200A342E1 /* SuperView.swift in Sources */,
 				B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */,
 				B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */,
-				2BA45B20265E7E8500A342E1 /* InstabugTask.xcdatamodeld in Sources */,
 				B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +392,10 @@
 			files = (
 				B47E3EF3262D7C7C007D38E8 /* InstabugLogger.swift in Sources */,
 				2B08C824265E83FE000F2415 /* LoggerModel.swift in Sources */,
+				2B86F99D265EE01C0021AE00 /* CoreDataManager.swift in Sources */,
+				2B86F9A4265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld in Sources */,
+				2BCBEFC1265F1C55007F6FDE /* LogLevel.swift in Sources */,
+				2BCBEFBB265F1A0C007F6FDE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,13 +736,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2BA45B1E265E7E8500A342E1 /* InstabugTask.xcdatamodeld */ = {
+		2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2BA45B1F265E7E8500A342E1 /* InstabugTask.xcdatamodel */,
+				2B86F9A3265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodel */,
 			);
-			currentVersion = 2BA45B1F265E7E8500A342E1 /* InstabugTask.xcdatamodel */;
-			path = InstabugTask.xcdatamodeld;
+			currentVersion = 2B86F9A3265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodel */;
+			path = InstabugLoggerCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
