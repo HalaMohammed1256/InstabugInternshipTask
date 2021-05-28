@@ -19,14 +19,13 @@ public class InstabugLogger {
         let logMessage = getLogMessage(message: message)
         let timestramp = getLogTimestamp()
         
+//        print("your project send a\\an \(level) with message \(logMessage) and that log has occurred at \(timestramp)")
         
         let loggerModel = LoggerModel(message: logMessage, level: .error, timestamp: timestramp)
         
         // save log to core data
         CoreDataManager.instance.saveNewLogToLogger(entityName: Constants.loggerEntity, loggerData: loggerModel)
         
-        let loggers = fetchAllLogs() as? [LoggerModel]
-//        print(loggers?.contains(where: <#T##(LoggerModel) throws -> Bool#>))
 
     }
 
