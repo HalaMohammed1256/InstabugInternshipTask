@@ -3,6 +3,8 @@
 logging framework that has an easy interface to log with different levels and fetch logs when needed.
 
 
+
+
 Requirements
 The logging framework should accept a log message and level.
 The logging framework should store each log with it's level and timestamp. 
