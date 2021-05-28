@@ -4,7 +4,6 @@ logging framework that has an easy interface to log with different levels and fe
 
 
 
-
 Requirements:
 
 
@@ -23,3 +22,7 @@ If log message is longer than 1000 character, truncate at 1000 and add ... at th
 Clean disk store on every app launch. 
 
 Test the framework using unit tests.
+
+
+
+That is the first time i wrire unit test
