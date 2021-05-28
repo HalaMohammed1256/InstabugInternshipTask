@@ -6,28 +6,87 @@
 //
 
 import XCTest
+import CoreData
 @testable import InstabugLogger
+
 
 class InstabugLoggerTests: XCTestCase {
 
+    var instabugLogger: InstabugLogger?
+
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        try super.setUpWithError()
+        instabugLogger = InstabugLogger()
+        
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        instabugLogger = nil
+        super.tearDown()
+        
+    }
+    
+    
+    func testGetLogTimestamp() {
+        
+        let timestamp = instabugLogger?.getLogTimestamp()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        XCTAssertEqual(timestamp, formatter.string(from: Date()))
+        
+    }
+    
+    func testMessageLengthLessThanOrEqual1000() {
+        
+        let messageAfterCondition = instabugLogger?.getLogMessage(message: "message")
+        
+        XCTAssertLessThanOrEqual((messageAfterCondition?.count)!, 1000)
+        
+    }
+    
+    
+    func testClearAllLogsFromCoreData() {
+        
+        instabugLogger?.clearLogs()
+        let logger = instabugLogger?.fetchAllLogs()
+                
+        XCTAssertEqual((logger?.count)!, 0)
+        
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testFetchAllLogs() {
+        
+        let logger = instabugLogger?.fetchAllLogs()
+        XCTAssertGreaterThan((logger?.count)!, 0)
+        
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    
+    func testFetchAllLogsWithCompletion() {
+        
+        instabugLogger?.fetchAllLogs(completionHandler: { (loggers) in
+            XCTAssertGreaterThan(loggers.count, 0)
+        })
+        
     }
+    
+    
+    func testLog() {
+        
+        let loggerModel = LoggerModel(message: "New Element", level: .debug, timestamp: (instabugLogger?.getLogTimestamp())!)
+        
+        instabugLogger?.log(level: loggerModel.level, message: loggerModel.message)
+        let loggers = instabugLogger?.fetchAllLogs()
+        
+//        XCTAssertTrue(loggers?.contains(// logger model))
+        
+    }
+    
 
 }

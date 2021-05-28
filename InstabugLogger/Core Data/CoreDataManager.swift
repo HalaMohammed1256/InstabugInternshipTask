@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
-
+ 
 
 struct CoreDataManager {
     
@@ -16,50 +16,53 @@ struct CoreDataManager {
     static var instance = CoreDataManager()
     
     // framework bundle identifier
-    let identifier: String = "com.Instabug.InstabugInternshipTask"
-    
+    let identifier: String = Constants.identifier
     // core data name
-    let model: String = "InstabugLoggerCoreData"
+    let moduleName: String = Constants.moduleName
+    
+    
+    lazy var modelURl: URL? = {
+        
+        let instabugLoggerBundle = Bundle(identifier: self.identifier)
+        let modelUrl = instabugLoggerBundle!.url(forResource: self.moduleName, withExtension: "momd")
+        return modelUrl
+        
+    }()
+        
     
     // MARK : persistentContainer
     lazy var persistentContainer: NSPersistentContainer = {
         
-        let messageKitBundle = Bundle(identifier: self.identifier)
-        let modelURL = messageKitBundle!.url(forResource: self.model, withExtension: "momd")
+        let managedObjectModel = NSManagedObjectModel(contentsOf: modelURl!)!
         
-        
-        let managedObjectModel =  NSManagedObjectModel(contentsOf: modelURL!)
-        
-        
-        let container = NSPersistentContainer(name: self.model, managedObjectModel: managedObjectModel!)
+        let container = NSPersistentContainer(name: self.moduleName, managedObjectModel: managedObjectModel)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
         return container
     }()
     
     
     
-    mutating func saveToCoreData(entityName: String, loggerData: LoggerModel){
+    mutating func saveNewLogToLogger(entityName: String, loggerData: LoggerModel){
         
         let context = persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Logger", in: context)
         let entityRow = NSManagedObject(entity: entity!, insertInto: context)
         
         
-        let fetchedLoggerData = fetchFromCoreData(entityName: Constants.loggerEntity)
+        let fetchedLoggerData = fetchAllLogsFromLogger(entityName: Constants.loggerEntity)
         
         if fetchedLoggerData.count > 5{
-            deletefromCoreData(index: 0, dataDeletedArray: fetchedLoggerData)
+            deleteLogAt(index: 0, dataDeletedArray: fetchedLoggerData)
         }
         
         entityRow.setValue(loggerData.message, forKey: Constants.message)
         entityRow.setValue(loggerData.level.rawValue, forKey: Constants.level)
-        entityRow.setValue(loggerData.timeStamp, forKey: Constants.timestamp)
-        
-        
+        entityRow.setValue(loggerData.timestamp, forKey: Constants.timestamp)
         
         
         do{
@@ -72,7 +75,7 @@ struct CoreDataManager {
     }
     
     
-    mutating func fetchFromCoreData(entityName: String) -> [Logger]{
+    mutating func fetchAllLogsFromLogger(entityName: String) -> [Logger]{
         
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
@@ -90,11 +93,11 @@ struct CoreDataManager {
     }
     
     
-    mutating func deleteCoreData(entityName: String){
+    mutating func clearLogs(entityName: String){
         
         let context = persistentContainer.viewContext
         
-        var dataDeletedArray = fetchFromCoreData(entityName: entityName)
+        var dataDeletedArray = fetchAllLogsFromLogger(entityName: entityName)
                 
         for object in dataDeletedArray{
             context.delete(object)
@@ -113,11 +116,10 @@ struct CoreDataManager {
     }
     
     
-    mutating func deletefromCoreData(index: Int, dataDeletedArray : [Logger]){
+    mutating func deleteLogAt(index: Int, dataDeletedArray : [Logger]){
 
             let context = persistentContainer.viewContext
             context.delete(dataDeletedArray[index])
-//            dataDeletedArray.remove(at: index)
 
             do{
                 try context.save()
@@ -127,21 +129,6 @@ struct CoreDataManager {
                 print(error)
             }
         }
-    
-    
-    //    mutating func saveContext () {
-    //        let context = persistentContainer.viewContext
-    //        if context.hasChanges {
-    //            do {
-    //                try context.save()
-    //            } catch {
-    //                // Replace this implementation with code to handle the error appropriately.
-    //                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-    //                let nserror = error as NSError
-    //                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-    //            }
-    //        }
-    //    }
-    
+  
 }
 

@@ -14,5 +14,7 @@ struct Constants {
     static let level = "level"
     static let timestamp = "timestamp"
     static let loggerEntity = "Logger"
+    static let moduleName = "InstabugLoggerCoreData"
+    static let identifier = "com.Instabug.InstabugInternshipTask"
     
 }

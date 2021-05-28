@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B08C824265E83FE000F2415 /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08C820265E8349000F2415 /* LoggerModel.swift */; };
+		2B14ABF7266165A500DF5021 /* CoreDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B14ABF6266165A500DF5021 /* CoreDataManagerTest.swift */; };
 		2B86F99D265EE01C0021AE00 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F99C265EE01C0021AE00 /* CoreDataManager.swift */; };
 		2B86F9A4265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */; };
 		2B8A389C265FD9AC00FB25B5 /* InstabugLoggerCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F9A2265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodeld */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		2B08C820265E8349000F2415 /* LoggerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerModel.swift; sourceTree = "<group>"; };
+		2B14ABF6266165A500DF5021 /* CoreDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTest.swift; sourceTree = "<group>"; };
 		2B86F99C265EE01C0021AE00 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2B86F9A3265EE0550021AE00 /* InstabugLoggerCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstabugLoggerCoreData.xcdatamodel; sourceTree = "<group>"; };
 		2BCBEFBA265F1A0C007F6FDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				B47E3EE1262D7C66007D38E8 /* InstabugLoggerTests.swift */,
+				2B14ABF6266165A500DF5021 /* CoreDataManagerTest.swift */,
 				B47E3EE3262D7C66007D38E8 /* Info.plist */,
 			);
 			path = InstabugLoggerTests;
@@ -398,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B14ABF7266165A500DF5021 /* CoreDataManagerTest.swift in Sources */,
 				B47E3EE2262D7C66007D38E8 /* InstabugLoggerTests.swift in Sources */,
 				2B8A38A1265FD9BD00FB25B5 /* InstabugLoggerCoreData.xcdatamodeld in Sources */,
 			);
